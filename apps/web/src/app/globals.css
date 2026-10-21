@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "@scyquantix/ui/styles.css";
+
+/* Classes usadas pelos componentes do pacote de UI */
+@source "../../../../packages/ui/src";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-cyan-100 text-navy-800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
