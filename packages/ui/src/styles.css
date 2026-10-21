@@ -1,0 +1,33 @@
+/*
+ * Tokens da identidade visual ScyQuantix.
+ * Paleta oficial: Azul profundo #0B2D4A · Ciano #00C2D4 · Grafite #1F2937 · Cinza claro #E5EAF0.
+ * Importado pelos apps depois de `@import "tailwindcss"`.
+ */
+@theme {
+  --color-navy-50: #eef4f9;
+  --color-navy-100: #d6e3ef;
+  --color-navy-300: #7f9bb5;
+  --color-navy-500: #2a5476;
+  --color-navy-700: #0b2d4a;
+  --color-navy-800: #08243c;
+  --color-navy-900: #061c30;
+  --color-navy-950: #041322;
+
+  --color-cyan-50: #e6f9fb;
+  --color-cyan-100: #c2f1f5;
+  --color-cyan-300: #5fdbe6;
+  --color-cyan-400: #2fd0de;
+  --color-cyan-500: #00c2d4;
+  --color-cyan-600: #00a3b2;
+  --color-cyan-700: #00808c;
+
+  --color-graphite: #1f2937;
+  --color-mist: #e5eaf0;
+  --color-mist-50: #f4f7fa;
+  --color-sky-wash: #eef6fb;
+
+  --color-brand: var(--color-navy-700);
+  --color-accent: var(--color-cyan-500);
+  --color-ink: var(--color-graphite);
+  --color-muted: #5b6b7d;
+}
