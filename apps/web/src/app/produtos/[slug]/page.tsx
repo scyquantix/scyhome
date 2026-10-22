@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge, buttonVariants, Container, Highlight } from "@scyquantix/ui";
 import { ProductPreview } from "@/components/previews/product-preview";
 import { getProduct, products, statusLabel } from "@/config/products";
-import { contactHref } from "@/config/site";
 
 export const dynamicParams = false;
 
@@ -47,13 +46,9 @@ export default async function ProductPage({ params }: PageProps<"/produtos/[slug
           <p className="mt-3 max-w-xl text-lg text-navy-100">{product.description}</p>
           <p className="mt-4 text-sm font-medium text-cyan-300">{product.features.join(" · ")}</p>
           <div className="mt-10 flex flex-wrap gap-4">
-            {product.appUrl ? (
+            {product.appUrl && (
               <a href={product.appUrl} className={buttonVariants({ size: "lg" })}>
                 Acessar o {product.name} <ArrowRight aria-hidden className="size-4" />
-              </a>
-            ) : (
-              <a href={contactHref} className={buttonVariants({ size: "lg" })}>
-                Quero ser avisado <ArrowRight aria-hidden className="size-4" />
               </a>
             )}
           </div>

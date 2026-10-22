@@ -1,7 +1,7 @@
-import { ArrowRight, ChartColumnIncreasing, LayoutGrid, Search, type LucideIcon } from "lucide-react";
-import { Badge, buttonVariants, Container, Highlight } from "@scyquantix/ui";
+import { ChartColumnIncreasing, LayoutGrid, Search, type LucideIcon } from "lucide-react";
+import { Badge, Container, Highlight } from "@scyquantix/ui";
 import { ProductPreview } from "@/components/previews/product-preview";
-import { productHref, products, type Product } from "@/config/products";
+import { products, type Product } from "@/config/products";
 
 const icons: Record<Product["preview"], LucideIcon> = {
   sql: Search,
@@ -46,12 +46,6 @@ export function Products() {
                 <div className="mt-5 flex-1 rounded-lg bg-white p-3">
                   <ProductPreview kind={product.preview} compact />
                 </div>
-                <a
-                  href={productHref(product)}
-                  className={buttonVariants({ className: "mt-5 w-full" })}
-                >
-                  Conheça o {product.name} <ArrowRight aria-hidden className="size-4" />
-                </a>
               </li>
             );
           })}

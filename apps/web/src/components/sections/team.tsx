@@ -1,10 +1,9 @@
-import { ArrowRight } from "lucide-react";
 import { Container, Highlight, SectionHeader } from "@scyquantix/ui";
 import { founders } from "@/config/content";
 
 export function Team() {
   return (
-    <section id="quem-somos" className="bg-mist-50 py-20 lg:py-28">
+    <section id="quem-somos" className="py-20 lg:py-28">
       <Container>
         <SectionHeader
           eyebrow="Quem somos"
@@ -35,16 +34,6 @@ export function Team() {
                   ),
                 )}
               </p>
-              {founder.linkedin && (
-                <a
-                  href={founder.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700"
-                >
-                  Perfil no LinkedIn <ArrowRight aria-hidden className="size-4" />
-                </a>
-              )}
             </article>
           ))}
         </div>

@@ -1,4 +1,5 @@
-import { ContactCta } from "@/components/sections/contact-cta";
+import { Closing } from "@/components/sections/closing";
+import { Example } from "@/components/sections/example";
 import { Hero } from "@/components/sections/hero";
 import { HowWeWork } from "@/components/sections/how-we-work";
 import { Products } from "@/components/sections/products";
@@ -10,10 +11,11 @@ export default function HomePage() {
     <>
       <Hero />
       <Solutions />
+      <Example />
       <Team />
       <HowWeWork />
       <Products />
-      <ContactCta />
+      <Closing />
     </>
   );
 }

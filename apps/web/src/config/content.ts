@@ -43,7 +43,6 @@ export type Founder = {
   role: string;
   /** Trechos alternados; os de índice ímpar saem em negrito. */
   bio: string[];
-  linkedin: string | null;
 };
 
 export const founders: Founder[] = [
@@ -55,7 +54,6 @@ export const founders: Founder[] = [
       "atendimento a demandas do Banco Central do Brasil e elaboração de reportes regulatórios",
       ".",
     ],
-    linkedin: null,
   },
   {
     name: "Leonardo Souza",
@@ -63,7 +61,6 @@ export const founders: Founder[] = [
     bio: [
       "Reúne experiência em engenharia de dados, análise estatística e desenvolvimento de sistemas. Atua na automação e otimização de processos, conectando necessidades de gestão à construção de aplicações e análises, com foco em eficiência e uso responsável de recursos.",
     ],
-    linkedin: null,
   },
 ];
 

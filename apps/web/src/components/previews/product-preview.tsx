@@ -56,8 +56,13 @@ function SqlPreview() {
             </span>
           ))}
         </pre>
-        <div className="mt-2 flex justify-end">
-          <span className="rounded bg-cyan-500 px-2 py-0.5 font-semibold text-navy-900">▶ Executar</span>
+        <div className="mt-2 border-t border-mist pt-1.5">
+          <p className="mb-1 font-semibold">Resultados</p>
+          <div className="grid grid-cols-4 gap-1">
+            {Array.from({ length: 12 }, (_, index) => (
+              <span key={index} className={cn("h-1.5 rounded-sm", index < 4 ? "bg-navy-100" : "bg-mist")} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export function Solutions() {
           {solutions.map(({ icon: Icon, problem, service, description }) => (
             <li
               key={service}
-              className="flex gap-5 rounded-xl border border-mist bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
+              className="flex gap-5 rounded-xl border border-mist bg-white p-6 shadow-sm sm:p-8"
             >
               <Icon aria-hidden strokeWidth={1.5} className="size-10 shrink-0 text-navy-700" />
               <div>

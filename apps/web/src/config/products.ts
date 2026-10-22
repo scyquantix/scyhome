@@ -1,7 +1,7 @@
 /**
- * Registro dos produtos ScyQuantix. É a fonte única para a landing,
- * as páginas /produtos/<slug>, o sitemap e, no futuro, a navegação entre apps.
- * Para conectar um app, defina a variável de ambiente correspondente.
+ * Registro dos produtos ScyQuantix. É a fonte única para a landing e para as
+ * páginas /produtos/<slug> (hoje redirecionadas para /, ver next.config.ts).
+ * Para conectar um app no futuro, defina a variável de ambiente correspondente.
  */
 
 export type ProductStatus = "em-desenvolvimento" | "beta" | "disponivel";

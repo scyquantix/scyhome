@@ -1,7 +1,8 @@
 # ScyQuantix — site e apps
 
-Monorepo (pnpm + Turborepo) da ScyQuantix. Começa com a landing page e já está
-estruturado para receber os produtos (Scy Scope, Scy Pivot, Scy Canvas) e a plataforma.
+Monorepo (pnpm + Turborepo) da ScyQuantix. Nesta fase o site é uma única página
+institucional (`/`), só informativa: sem menu, botões, formulários ou links de contato.
+A estrutura já está pronta para receber os produtos (Scy Scope, Scy Pivot, Scy Canvas).
 
 ```
 apps/
@@ -29,7 +30,8 @@ Copie `apps/web/.env.example` para `apps/web/.env.local` e ajuste os valores.
 | --- | --- |
 | Textos das seções (soluções, sócios, etapas) | `apps/web/src/config/content.ts` |
 | Produtos (nome, textos, status, URL do app) | `apps/web/src/config/products.ts` |
-| Menu, e-mail de contato, URL do site | `apps/web/src/config/site.ts` |
+| URL do site, foto do hero (`heroImage`) | `apps/web/src/config/site.ts` |
+| Exemplo ilustrativo, encerramento | `apps/web/src/components/sections/example.tsx`, `closing.tsx` |
 | Cores e tokens da marca | `packages/ui/src/styles.css` |
 | Logo (símbolo + nome em contornos SVG) | `packages/ui/src/components/logo-paths.ts`, `logo.tsx`; arquivos avulsos em `apps/web/public/` |
 
@@ -38,7 +40,9 @@ Copie `apps/web/.env.example` para `apps/web/.env.local` e ajuste os valores.
 - **Novo app** (ex.: `apps/scope`): crie com `next`, dependa de `@scyquantix/ui` e
   `@scyquantix/typescript-config`, importe `@scyquantix/ui/styles.css` e adicione
   `transpilePackages: ["@scyquantix/ui"]` no `next.config.ts`.
-- **Conectar à landing**: defina `NEXT_PUBLIC_SCOPE_URL` (ou PIVOT/CANVAS). O botão
-  do produto passa a levar ao app; sem a variável, leva a `/produtos/<slug>`.
-- **Plataforma**: `NEXT_PUBLIC_PLATFORM_URL` faz aparecer "Acessar plataforma" no menu.
+- **Páginas de produto**: o código de `/produtos/<slug>` continua no repositório, mas
+  as rotas redirecionam temporariamente (307) para `/` — ver `next.config.ts`.
+  Para reabri-las, remova o redirecionamento e volte a listá-las no `sitemap.ts`.
+- **Foto do hero**: coloque o arquivo em `apps/web/public/` e preencha `heroImage`
+  (`src` e `alt`) em `site.ts`. Sem ela, o hero usa o fundo azul de reserva.
 - Pacotes compartilhados futuros (auth, cliente de API, conteúdo) entram em `packages/`.
