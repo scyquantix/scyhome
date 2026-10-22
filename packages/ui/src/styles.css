@@ -1,6 +1,9 @@
 /*
  * Tokens da identidade visual ScyQuantix.
+ * Fonte de verdade: docs/kit-frontpage (ESPECIFICACAO-MESTRA.md, cap. 7, e 02-marca/tokens.css).
  * Paleta oficial: Azul profundo #0B2D4A · Ciano #00C2D4 · Grafite #1F2937 · Cinza claro #E5EAF0.
+ * Contraste: ciano oficial só em decoração ou sobre navy; texto ciano sobre fundo claro usa
+ * `cyan-ink` (#007D8A, derivação funcional, não cor oficial).
  * Importado pelos apps depois de `@import "tailwindcss"`.
  */
 @theme {
@@ -20,14 +23,32 @@
   --color-cyan-500: #00c2d4;
   --color-cyan-600: #00a3b2;
   --color-cyan-700: #00808c;
+  /* --sq-cyan-text: texto ciano sobre superfície clara (4,88:1 no branco). */
+  --color-cyan-ink: #007d8a;
 
   --color-graphite: #1f2937;
   --color-mist: #e5eaf0;
   --color-mist-50: #f4f7fa;
-  --color-sky-wash: #eef6fb;
+  /* --sq-ice: faixas claras alternadas · --sq-border: bordas de cartões. */
+  --color-ice: #f3fafc;
+  --color-line: #d9e8ef;
 
   --color-brand: var(--color-navy-700);
   --color-accent: var(--color-cyan-500);
   --color-ink: var(--color-graphite);
-  --color-muted: #5b6b7d;
+  /* --sq-muted (6,28:1 no branco). */
+  --color-muted: #526271;
+
+  /* Escala fluida do kit (--sq-h1, --sq-h2, --sq-body). Faixas iniciais, não medidas oficiais. */
+  --text-h1: clamp(2.25rem, 4.2vw, 4rem);
+  --text-h1--line-height: 1.1;
+  --text-h2: clamp(1.75rem, 3vw, 2.75rem);
+  --text-h2--line-height: 1.2;
+  --text-body: clamp(1rem, 1.25vw, 1.125rem);
+  --text-body--line-height: 1.55;
+}
+
+/* --sq-section: respiro vertical das seções (48 px no celular a 88 px no desktop). */
+@utility py-section {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
 }
