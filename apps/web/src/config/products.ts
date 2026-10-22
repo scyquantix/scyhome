@@ -1,58 +1,29 @@
 /**
- * Registro dos produtos ScyQuantix. É a fonte única para a landing,
- * as páginas /produtos/<slug>, o sitemap e, no futuro, a navegação entre apps.
- * Para conectar um app, defina a variável de ambiente correspondente.
+ * Registro dos produtos ScyQuantix. Textos vêm de `content/home.pt-BR.json`; aqui ficam
+ * só os metadados técnicos (rota, status, app, tipo de prévia), ligados pelo nome do produto.
+ * `preview` (do JSON) descreve a prévia em texto; `previewKind` escolhe o desenho.
+ * As páginas /produtos/<slug> estão redirecionadas para / nesta fase (ver next.config.ts).
  */
+import { content } from "@/content/home";
 
 export type ProductStatus = "em-desenvolvimento" | "beta" | "disponivel";
+export type PreviewKind = "sql" | "pivot" | "chart";
 
-export type Product = {
-  slug: string;
-  name: string;
-  headline: string;
-  description: string;
-  features: [string, string];
-  status: ProductStatus;
-  /** URL do app publicado. Sem URL, o CTA leva à página do produto no site. */
-  appUrl: string | null;
-  preview: "sql" | "pivot" | "chart";
+type ProductMeta = { slug: string; status: ProductStatus; appUrl: string | null; previewKind: PreviewKind };
+
+const meta: Record<string, ProductMeta> = {
+  "Scy Scope": { slug: "scope", status: "em-desenvolvimento", appUrl: process.env.NEXT_PUBLIC_SCOPE_URL || null, previewKind: "sql" },
+  "Scy Pivot": { slug: "pivot", status: "em-desenvolvimento", appUrl: process.env.NEXT_PUBLIC_PIVOT_URL || null, previewKind: "pivot" },
+  "Scy Canvas": { slug: "canvas", status: "em-desenvolvimento", appUrl: process.env.NEXT_PUBLIC_CANVAS_URL || null, previewKind: "chart" },
 };
 
-export const products: Product[] = [
-  {
-    slug: "scope",
-    name: "Scy Scope",
-    headline: "Explore dados públicos.",
-    description:
-      "Consulte dados públicos organizados gratuitamente. Para empresas, planos pagos de acesso por API.",
-    features: ["Consultas gratuitas", "API empresarial"],
-    status: "em-desenvolvimento",
-    appUrl: process.env.NEXT_PUBLIC_SCOPE_URL || null,
-    preview: "sql",
-  },
-  {
-    slug: "pivot",
-    name: "Scy Pivot",
-    headline: "Transforme perguntas em análises.",
-    description:
-      "Cruze dados em tabelas dinâmicas no navegador. Salve suas visões, filtros e relatórios e compartilhe estudos no LinkedIn.",
-    features: ["Consultas gratuitas", "Análises salvas"],
-    status: "em-desenvolvimento",
-    appUrl: process.env.NEXT_PUBLIC_PIVOT_URL || null,
-    preview: "pivot",
-  },
-  {
-    slug: "canvas",
-    name: "Scy Canvas",
-    headline: "Dê forma às suas análises.",
-    description:
-      "Crie gráficos e painéis a partir da mesma base de dados do Scy Pivot. Organize suas visualizações em um ambiente gratuito.",
-    features: ["Criação visual", "Base compartilhada"],
-    status: "em-desenvolvimento",
-    appUrl: process.env.NEXT_PUBLIC_CANVAS_URL || null,
-    preview: "chart",
-  },
-];
+export const products = content.products.items.map((item) => {
+  const itemMeta = meta[item.name];
+  if (!itemMeta) throw new Error(`Produto sem metadados em config/products.ts: ${item.name}`);
+  return { ...item, ...itemMeta };
+});
+
+export type Product = (typeof products)[number];
 
 export const statusLabel: Record<ProductStatus, string> = {
   "em-desenvolvimento": "Em desenvolvimento",
@@ -62,8 +33,4 @@ export const statusLabel: Record<ProductStatus, string> = {
 
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
-}
-
-export function productHref(product: Product) {
-  return product.appUrl ?? `/produtos/${product.slug}`;
 }

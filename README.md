@@ -1,7 +1,8 @@
 # ScyQuantix — site e apps
 
-Monorepo (pnpm + Turborepo) da ScyQuantix. Começa com a landing page e já está
-estruturado para receber os produtos (Scy Scope, Scy Pivot, Scy Canvas) e a plataforma.
+Monorepo (pnpm + Turborepo) da ScyQuantix. Nesta fase o site é uma única página
+institucional (`/`), só informativa: sem menu, botões, formulários ou links de contato.
+A estrutura já está pronta para receber os produtos (Scy Scope, Scy Pivot, Scy Canvas).
 
 ```
 apps/
@@ -11,6 +12,11 @@ packages/
   typescript-config/      tsconfig compartilhado
 ```
 
+## Fonte de verdade
+
+`docs/kit-frontpage/` — kit da front page. Comece por `ESPECIFICACAO-MESTRA.md` (v2.0):
+escopo, copy, sistema visual, contraste e critérios de aceite. Prevalece sobre o resto do kit.
+
 ## Rodando
 
 ```bash
@@ -19,6 +25,7 @@ pnpm install
 pnpm dev                 # http://localhost:3000
 pnpm build               # build de produção de todos os apps
 pnpm typecheck
+pnpm verificar           # depois do build: copy, estrutura e ausência de ações na home
 ```
 
 Copie `apps/web/.env.example` para `apps/web/.env.local` e ajuste os valores.
@@ -27,18 +34,27 @@ Copie `apps/web/.env.example` para `apps/web/.env.local` e ajuste os valores.
 
 | O quê | Arquivo |
 | --- | --- |
-| Textos das seções (soluções, sócios, etapas) | `apps/web/src/config/content.ts` |
-| Produtos (nome, textos, status, URL do app) | `apps/web/src/config/products.ts` |
-| Menu, e-mail de contato, URL do site | `apps/web/src/config/site.ts` |
-| Cores e tokens da marca | `packages/ui/src/styles.css` |
+| Textos da página (fonte única) | `apps/web/src/content/home.pt-BR.json` — depois rode `python3 docs/kit-frontpage/gerar-derivados.py` |
+| Seções da home | `apps/web/src/components/home/` (uma por seção, na ordem de `app/page.tsx`) |
+| Prévias dos produtos | `apps/web/src/components/home/previews/` |
+| Metadados dos produtos (rota, status, app) | `apps/web/src/config/products.ts` |
+| URL canônica, título/descrição, foto do hero (`heroImage`) | `apps/web/src/config/site.ts` |
+| Cores, escala tipográfica e respiros | `packages/ui/src/styles.css` (tokens do kit) |
 | Logo (símbolo + nome em contornos SVG) | `packages/ui/src/components/logo-paths.ts`, `logo.tsx`; arquivos avulsos em `apps/web/public/` |
+
+**Contraste:** o ciano oficial (`cyan-500`) só em decoração ou sobre navy. Texto ciano sobre
+fundo claro usa `cyan-ink` (#007D8A); `<Highlight>` já escolhe pelo `tone`.
 
 ## Escalando
 
 - **Novo app** (ex.: `apps/scope`): crie com `next`, dependa de `@scyquantix/ui` e
   `@scyquantix/typescript-config`, importe `@scyquantix/ui/styles.css` e adicione
   `transpilePackages: ["@scyquantix/ui"]` no `next.config.ts`.
-- **Conectar à landing**: defina `NEXT_PUBLIC_SCOPE_URL` (ou PIVOT/CANVAS). O botão
-  do produto passa a levar ao app; sem a variável, leva a `/produtos/<slug>`.
-- **Plataforma**: `NEXT_PUBLIC_PLATFORM_URL` faz aparecer "Acessar plataforma" no menu.
+- **Páginas de produto**: o código de `/produtos/<slug>` continua no repositório, mas
+  as rotas redirecionam temporariamente (307) para `/` — ver `next.config.ts`.
+  Para reabri-las, remova o redirecionamento e volte a listá-las no `sitemap.ts`.
+- **Foto do hero**: coloque o arquivo limpo em `apps/web/public/` e preencha `heroImage`
+  em `site.ts`. Sem ela, o hero fica no estado provisório em navy.
+- **Domínio**: a origem canônica é `https://www.scyquantix.com`. O domínio sem `www`
+  precisa de registro DNS e redirecionamento configurados no Vercel (fora do código).
 - Pacotes compartilhados futuros (auth, cliente de API, conteúdo) entram em `packages/`.

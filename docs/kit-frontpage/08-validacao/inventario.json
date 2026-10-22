@@ -1,0 +1,190 @@
+{
+  "data": "2026-10-22",
+  "arquivos": [
+    {
+      "arquivo": "01-referencias/arte-final-aprovada.png",
+      "bytes": 1875485,
+      "sha256": "8a772a7c36a0db565333e7e9610eff2cd3a104d7382b6e30bd9885376b6f5354"
+    },
+    {
+      "arquivo": "01-referencias/campanha-institucional.jpeg",
+      "bytes": 221886,
+      "sha256": "cf571969049b21f032bb72039d4c173d6cbd259cb77d39a869aa64e60991291a"
+    },
+    {
+      "arquivo": "01-referencias/prancha-da-marca.jpeg",
+      "bytes": 349318,
+      "sha256": "c82e0b39d5bb48ff4c2db43e8537c3761f56aab9ba8e621fc6984de573d6081e"
+    },
+    {
+      "arquivo": "02-marca/IDENTIDADE.md",
+      "bytes": 1316,
+      "sha256": "5e38e098fc915adb2c990d01abd50524311e808b4535d397dbb90b11b50573aa"
+    },
+    {
+      "arquivo": "02-marca/simbolo-site-atual.svg",
+      "bytes": 2298,
+      "sha256": "9415fb230867e36581aeed220cf1c3722063fd48ea234e2e3be440204983f4cc"
+    },
+    {
+      "arquivo": "02-marca/tokens.css",
+      "bytes": 1283,
+      "sha256": "426d25b6b288b5e45cde085f6f22be14416ad416ae9e25c281f05339b551bb4b"
+    },
+    {
+      "arquivo": "02-marca/wordmark-site-atual.svg",
+      "bytes": 10139,
+      "sha256": "be85817e8795c116113ece01e4b1cb9da7c9bba2ab81ebd5c58d72a5767df06a"
+    },
+    {
+      "arquivo": "03-textos/conteudo.pt-BR.json",
+      "bytes": 5557,
+      "sha256": "d2b4769fb7551ca17673756d06dd00e0a92f278dc4abd2c87cc46a54c5b1822b"
+    },
+    {
+      "arquivo": "03-textos/textos-por-secao.md",
+      "bytes": 5510,
+      "sha256": "6b0e8460d162c92fad8b05c2aea3acc882f717ce2900e62b91737ab0af41fe6e"
+    },
+    {
+      "arquivo": "04-secoes/01-header.md",
+      "bytes": 798,
+      "sha256": "88cba97836f2c4fd7de859a94a147837996d245ce5f2ca8d7277d4ffd41af8a4"
+    },
+    {
+      "arquivo": "04-secoes/02-hero.md",
+      "bytes": 827,
+      "sha256": "c063ec2f1ed372088c930202735b1c3563603e2d69ad7c19a905ca545a46502b"
+    },
+    {
+      "arquivo": "04-secoes/03-solucoes.md",
+      "bytes": 758,
+      "sha256": "27d3d7500f7789633ab8cfc0b9979e807428f88d4b8abf8ebd2a0dbc3393aea6"
+    },
+    {
+      "arquivo": "04-secoes/04-fluxo.md",
+      "bytes": 754,
+      "sha256": "8cfae4fe1526613e016d801ce312d66901798ca2273c6a1b4c117a84ae89b08a"
+    },
+    {
+      "arquivo": "04-secoes/05-fundadores.md",
+      "bytes": 823,
+      "sha256": "ec0ff4179cf20d0cfa3c2cc5d1037485baaee623e9976d996f7d80c5e337f102"
+    },
+    {
+      "arquivo": "04-secoes/06-processo.md",
+      "bytes": 706,
+      "sha256": "1e4d741158de1e489d7b9b6d99a8d35272c6cab1c8531d64c5002083a1a06fcc"
+    },
+    {
+      "arquivo": "04-secoes/07-produtos.md",
+      "bytes": 824,
+      "sha256": "61f14c44fbfdd2f503ade687ce13d600c6b8789b34d39439eb0103b1cc2a8a25"
+    },
+    {
+      "arquivo": "04-secoes/08-encerramento.md",
+      "bytes": 772,
+      "sha256": "7c3fa13200ffe0ce6143ace6a9c366afba9480bc40568ea658fe1c702b7f17a8"
+    },
+    {
+      "arquivo": "04-secoes/09-footer.md",
+      "bytes": 701,
+      "sha256": "d9e45a43b401a6b51c5a509eb3e98aa9fe71cc2d606a16bf8c26e27132c2455f"
+    },
+    {
+      "arquivo": "05-componentes/LEIA-ME.md",
+      "bytes": 1057,
+      "sha256": "62e686f6520fa96109e5eb10b9599e07691a1a150e15aa439396fc2d8619d6bb"
+    },
+    {
+      "arquivo": "05-componentes/StaticPreviews.tsx",
+      "bytes": 1773,
+      "sha256": "533b94a4baaaec7fcaaeca4f1b2bb2db283bd71fcfb42c2e8c95df8e59a14907"
+    },
+    {
+      "arquivo": "05-componentes/previews.css",
+      "bytes": 1569,
+      "sha256": "1422a5635fd62c0a1073a82744f2116039a43760a2354eb52ee3430e6aec8861"
+    },
+    {
+      "arquivo": "06-icones/PROCEDENCIA.md",
+      "bytes": 506,
+      "sha256": "e4493d4748df0c775cdca7281d015405235a009ce5e83f7a895f55ebb6625fff"
+    },
+    {
+      "arquivo": "06-icones/boxes.svg",
+      "bytes": 848,
+      "sha256": "2826e3effed3faf376422ad50ba97b13c864be94e04522dbd9a134ba3df10aa4"
+    },
+    {
+      "arquivo": "06-icones/chart-column-increasing.svg",
+      "bytes": 326,
+      "sha256": "8a49fc88a774d75ecf1ff3b170e2f805035b845fd79d8d5d9c5782954eb4e745"
+    },
+    {
+      "arquivo": "06-icones/chart-column.svg",
+      "bytes": 328,
+      "sha256": "70dbcc6ef9683f0aca99a0373fec00af8f2db3b4250c6b68c03c584a24443f32"
+    },
+    {
+      "arquivo": "06-icones/cog.svg",
+      "bytes": 656,
+      "sha256": "ef7e6be50f8c9c84cb80ad641050da2427ce164aa2771ae64a1132d1d9d1c4ec"
+    },
+    {
+      "arquivo": "06-icones/database.svg",
+      "bytes": 338,
+      "sha256": "cea8b16e590e96acad1395d5b1a3148bc7d8eea03a9d08708559e82e65ee7049"
+    },
+    {
+      "arquivo": "06-icones/layout-grid.svg",
+      "bytes": 422,
+      "sha256": "493bb98f8815b026aafae6f887620ff882e7a29bec9e04f6d7d6dc79a1df1b40"
+    },
+    {
+      "arquivo": "06-icones/search.svg",
+      "bytes": 279,
+      "sha256": "2d849e8caaf1fb53ac04bc3f918d6f6afaf4678741b3c38919129c3c8b15bee5"
+    },
+    {
+      "arquivo": "07-implementacao/AGENTE.md",
+      "bytes": 3674,
+      "sha256": "8e02e2ec6250457e9d3f9f9070c29194074db86db27b05e0678d324e87e17460"
+    },
+    {
+      "arquivo": "07-implementacao/COMPOSICAO.md",
+      "bytes": 1404,
+      "sha256": "283958e001c407cf0852346aef1f5ec33f18bf3fa374cd0675982f3ab6a78730"
+    },
+    {
+      "arquivo": "07-implementacao/PENDENCIAS.md",
+      "bytes": 1313,
+      "sha256": "e2e32804a1f6b46192ec24fb0ef77f768fb3820b9d9599ec166934a29a78a6d8"
+    },
+    {
+      "arquivo": "08-validacao/CHECKLIST.md",
+      "bytes": 1689,
+      "sha256": "37d55e9b8fe86c87733687786e501a8e43c22c24d231151a6e7fae53fbd16360"
+    },
+    {
+      "arquivo": "ESPECIFICACAO-MESTRA.md",
+      "bytes": 58445,
+      "sha256": "55558060f2ec18f035888daad14b7836a3904de046bb4550d22985893c43270c"
+    },
+    {
+      "arquivo": "README.md",
+      "bytes": 2395,
+      "sha256": "ffa190b3cdb59dac032726291f68a6ef7ce1701557bfe19979beedfc52561383"
+    },
+    {
+      "arquivo": "catalogo.html",
+      "bytes": 8759,
+      "sha256": "b259eb9a25d46d9561a6bf6d100a8aee54ab603ba7a6bba3b11625f6eb86964c"
+    },
+    {
+      "arquivo": "gerar-derivados.py",
+      "bytes": 2246,
+      "sha256": "4dcae6ca665db0685206c81472a99d3e02af77f54cf8373105662901e95cc3ee"
+    }
+  ]
+}

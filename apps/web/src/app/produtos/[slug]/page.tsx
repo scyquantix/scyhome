@@ -3,9 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge, buttonVariants, Container, Highlight } from "@scyquantix/ui";
-import { ProductPreview } from "@/components/previews/product-preview";
+import { ProductPreview } from "@/components/home/previews/product-preview";
 import { getProduct, products, statusLabel } from "@/config/products";
-import { contactHref } from "@/config/site";
 
 export const dynamicParams = false;
 
@@ -41,25 +40,21 @@ export default async function ProductPage({ params }: PageProps<"/produtos/[slug
             {statusLabel[product.status]}
           </Badge>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            {first} <Highlight>{rest.join(" ")}</Highlight>
+            {first} <Highlight tone="light">{rest.join(" ")}</Highlight>
           </h1>
-          <p className="mt-4 font-display text-xl font-semibold">{product.headline}</p>
+          <p className="mt-4 font-display text-xl font-semibold">{product.title}</p>
           <p className="mt-3 max-w-xl text-lg text-navy-100">{product.description}</p>
-          <p className="mt-4 text-sm font-medium text-cyan-300">{product.features.join(" · ")}</p>
+          <p className="mt-4 text-sm font-medium text-cyan-300">{product.caption}</p>
           <div className="mt-10 flex flex-wrap gap-4">
-            {product.appUrl ? (
+            {product.appUrl && (
               <a href={product.appUrl} className={buttonVariants({ size: "lg" })}>
                 Acessar o {product.name} <ArrowRight aria-hidden className="size-4" />
-              </a>
-            ) : (
-              <a href={contactHref} className={buttonVariants({ size: "lg" })}>
-                Quero ser avisado <ArrowRight aria-hidden className="size-4" />
               </a>
             )}
           </div>
         </div>
         <div className="rounded-xl bg-white p-4 shadow-2xl shadow-black/30">
-          <ProductPreview kind={product.preview} />
+          <ProductPreview kind={product.previewKind} label={`${product.name}, prévia conceitual: ${product.preview}.`} />
           <p className="mt-3 text-center text-xs text-muted">Prévia conceitual. Produto em desenvolvimento.</p>
         </div>
       </Container>

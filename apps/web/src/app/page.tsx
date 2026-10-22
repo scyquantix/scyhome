@@ -1,19 +1,21 @@
-import { ContactCta } from "@/components/sections/contact-cta";
-import { Hero } from "@/components/sections/hero";
-import { HowWeWork } from "@/components/sections/how-we-work";
-import { Products } from "@/components/sections/products";
-import { Solutions } from "@/components/sections/solutions";
-import { Team } from "@/components/sections/team";
+import { DataFlowSection } from "@/components/home/data-flow-section";
+import { FoundersSection } from "@/components/home/founders-section";
+import { HeroSection } from "@/components/home/hero-section";
+import { ProcessSection } from "@/components/home/process-section";
+import { ProductsSection } from "@/components/home/products-section";
+import { PurposeSection } from "@/components/home/purpose-section";
+import { SolutionsSection } from "@/components/home/solutions-section";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Solutions />
-      <Team />
-      <HowWeWork />
-      <Products />
-      <ContactCta />
+      <HeroSection />
+      <SolutionsSection />
+      <DataFlowSection />
+      <FoundersSection />
+      <ProcessSection />
+      <ProductsSection />
+      <PurposeSection />
     </>
   );
 }

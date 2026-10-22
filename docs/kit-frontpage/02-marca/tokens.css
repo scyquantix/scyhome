@@ -1,0 +1,23 @@
+/*
+ * Paleta oficial da prancha (navy, ciano, grafite, cinza claro). Os demais tokens são
+ * propostas de implementação, não medidas oficiais da marca (ESPECIFICACAO-MESTRA.md, cap. 7).
+ */
+:root {
+ --sq-navy:#0B2D4A; --sq-cyan:#00C2D4; --sq-graphite:#1F2937;
+ --sq-gray:#E5EAF0; --sq-white:#FFFFFF; --sq-ice:#F3FAFC;
+ --sq-text:#1F2937; --sq-muted:#526271; --sq-border:#D9E8EF;
+ /* Derivação funcional, não oficial: texto ciano sobre superfície clara (4,88:1 no branco). */
+ --sq-cyan-text:#007D8A;
+ --sq-font:Arial,Helvetica,sans-serif; /* fallback provisório; a família oficial não foi identificada */
+ --sq-container:1200px; --sq-gutter:clamp(20px,4vw,64px);
+ --sq-section:clamp(48px,6vw,88px); --sq-radius:8px;
+ --sq-h1:clamp(36px,4.2vw,64px); --sq-h2:clamp(28px,3vw,44px);
+ --sq-body:clamp(16px,1.25vw,18px); --sq-leading:1.55;
+}
+/*
+ * Contraste (WCAG 1.4.3: 4,5:1 texto normal, 3:1 texto grande):
+ * - Ciano oficial sobre branco = 2,17:1. Nunca em texto sobre superfície clara, nem em títulos grandes.
+ * - Texto sobre superfície clara: navy (14,11:1) ou --sq-cyan-text (4,88:1).
+ * - Ciano oficial sobre navy = 6,49:1: liberado para texto e destaques nas faixas escuras.
+ * - Ciano oficial continua livre em elementos decorativos (linhas, ícones, bordas).
+ */
