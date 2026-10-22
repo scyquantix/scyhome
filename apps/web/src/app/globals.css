@@ -10,8 +10,30 @@
 }
 
 @layer base {
+  /* Altura do cabeçalho fixo: duas linhas (marca + menu) abaixo de 480 px. */
+  :root {
+    --altura-header: 96px;
+  }
+
+  @media (min-width: 480px) {
+    :root {
+      --altura-header: 72px;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --altura-header: 88px;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  /* O título da seção não fica escondido sob o cabeçalho fixo (+1 px da borda). */
+  section[id] {
+    scroll-margin-top: calc(var(--altura-header) + 1px);
   }
 
   body {

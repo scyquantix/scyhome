@@ -6,7 +6,21 @@ Derivado de `apps/web/src/content/home.pt-BR.json` por `gerar-derivados.py`; nã
 {
   "name": "ScyQuantix",
   "tagline": "Tecnologia orientada por evidências.",
-  "domain": "scyquantix.com"
+  "domain": "scyquantix.com",
+  "nav": [
+    {
+      "label": "Soluções",
+      "target": "solucoes"
+    },
+    {
+      "label": "Produtos",
+      "target": "produtos"
+    },
+    {
+      "label": "Sobre",
+      "target": "fundadores"
+    }
+  ]
 }
 ```
 

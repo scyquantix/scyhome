@@ -2,7 +2,8 @@
 /**
  * Verificação estática da home (ESPECIFICACAO-MESTRA.md, cap. 26.2), sem dependências.
  * Lê o HTML gerado por `pnpm build` e confere: copy do JSON presente, um h1, ordem das
- * seções, ausência de controles/ações e nomes antigos, e o kit em sincronia com a copy.
+ * seções, ausência de controles/ações e nomes antigos (só o skip link e as âncoras do menu),
+ * e o kit em sincronia com a copy.
  * Uso: pnpm build && node scripts/verificar-home.mjs
  */
 import { readFileSync } from "node:fs";
@@ -27,7 +28,7 @@ const falhas = [];
 const checar = (ok, mensagem) => ok || falhas.push(mensagem);
 
 // T01 — toda string do JSON aparece na página (exceto identificadores técnicos).
-const ignorar = new Set(["icon", "emphasis", "preview"]);
+const ignorar = new Set(["icon", "emphasis", "preview", "target"]);
 const strings = (valor, chave) =>
   typeof valor === "string"
     ? ignorar.has(chave) ? [] : [valor]
@@ -43,16 +44,20 @@ checar(posicoes.every((p) => p >= 0), `seções ausentes: ${ids.filter((_, i) =>
 checar(posicoes.every((p, i) => i === 0 || p > posicoes[i - 1]), "seções fora de ordem");
 checar(semScripts.includes('<main id="conteudo"'), "main#conteudo ausente");
 
-// T03 — nenhuma ação: só o link "Pular para o conteúdo".
+// T03 — nenhuma ação: só o link "Pular para o conteúdo" e as âncoras internas do menu (v2.1).
 const links = [...semScripts.matchAll(/<a\s[^>]*href="([^"]*)"/g)].map((m) => m[1]);
-checar(links.length === 1 && links[0] === "#conteudo", `links inesperados: ${links.join(", ")}`);
+const esperados = ["#conteudo", ...copy.brand.nav.map(({ target }) => `#${target}`)];
+checar(JSON.stringify(links) === JSON.stringify(esperados), `links inesperados: ${links.join(", ")}`);
+for (const { target } of copy.brand.nav) checar(ids.includes(target), `âncora do menu sem seção: #${target}`);
+checar((semScripts.match(/<nav[\s>]/g) ?? []).length === 1, "deve haver exatamente um nav (o menu do cabeçalho)");
+const header = semScripts.slice(semScripts.indexOf("<header"), semScripts.indexOf("</header>"));
+checar(/<nav[\s>]/.test(header), "o nav deve ficar no cabeçalho");
 for (const [nome, re] of [
   ["button", /<button[\s>]/],
   ["form", /<form[\s>]/],
   ["input", /<input[\s>]/],
   ["select", /<select[\s>]/],
   ["textarea", /<textarea[\s>]/],
-  ["nav", /<nav[\s>]/],
   ['role="button"', /role="button"/],
   ["contenteditable", /contenteditable/],
   ["mailto", /mailto:/],
@@ -69,4 +74,4 @@ if (falhas.length) {
   console.error(`✗ ${falhas.length} falha(s):\n- ${falhas.join("\n- ")}`);
   process.exit(1);
 }
-console.log(`✓ home verificada: ${strings(copy).length} textos, ${ids.length} seções, nenhuma ação além do skip link.`);
+console.log(`✓ home verificada: ${strings(copy).length} textos, ${ids.length} seções, links só internos (${esperados.join(" ")}).`);

@@ -1,7 +1,8 @@
 # ScyQuantix — site e apps
 
 Monorepo (pnpm + Turborepo) da ScyQuantix. Nesta fase o site é uma única página
-institucional (`/`), só informativa: sem menu, botões, formulários ou links de contato.
+institucional (`/`), só informativa: o único menu é o de âncoras do cabeçalho (rola até a seção,
+sem sair da página); sem botões, formulários ou links de contato.
 A estrutura já está pronta para receber os produtos (Scy Scope, Scy Pivot, Scy Canvas).
 
 ```
@@ -25,7 +26,7 @@ pnpm install
 pnpm dev                 # http://localhost:3000
 pnpm build               # build de produção de todos os apps
 pnpm typecheck
-pnpm verificar           # depois do build: copy, estrutura e ausência de ações na home
+pnpm verificar           # depois do build: copy, estrutura e só links internos na home
 ```
 
 Copie `apps/web/.env.example` para `apps/web/.env.local` e ajuste os valores.
@@ -53,8 +54,10 @@ fundo claro usa `cyan-ink` (#007D8A); `<Highlight>` já escolhe pelo `tone`.
 - **Páginas de produto**: o código de `/produtos/<slug>` continua no repositório, mas
   as rotas redirecionam temporariamente (307) para `/` — ver `next.config.ts`.
   Para reabri-las, remova o redirecionamento e volte a listá-las no `sitemap.ts`.
-- **Foto do hero**: coloque o arquivo limpo em `apps/web/public/` e preencha `heroImage`
-  em `site.ts`. Sem ela, o hero fica no estado provisório em navy.
+- **Foto do hero**: `apps/web/public/hero-escritorio.jpg`, ligada por `heroImage` em `site.ts`
+  (com `null`, o hero volta ao estado provisório em navy).
+- **Menu do cabeçalho**: itens em `brand.nav` do JSON (`label` + `target`, o `id` da seção).
+  O `pnpm verificar` falha se um link apontar para fora da página ou para uma seção inexistente.
 - **Domínio**: a origem canônica é `https://www.scyquantix.com`. O domínio sem `www`
   precisa de registro DNS e redirecionamento configurados no Vercel (fora do código).
 - Pacotes compartilhados futuros (auth, cliente de API, conteúdo) entram em `packages/`.
