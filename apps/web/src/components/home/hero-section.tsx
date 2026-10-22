@@ -28,7 +28,7 @@ export function HeroSection() {
 
 /**
  * Foto do escritório (decorativa) com sobreposição navy, mais densa à esquerda.
- * Sem a foto limpa, fica o estado provisório em navy: fidelidade visual pendente.
+ * O enquadramento desce até a mesa para a caneca com o símbolo aparecer no desktop.
  */
 function HeroBackdrop() {
   if (!heroImage) {
@@ -36,8 +36,8 @@ function HeroBackdrop() {
   }
   return (
     <div aria-hidden className="absolute inset-0 -z-10">
-      <Image src={heroImage.src} alt="" fill priority sizes="100vw" className="object-cover object-[70%_center]" />
-      <div className="absolute inset-0 bg-navy-950/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy-950/95 lg:via-navy-900/75 lg:to-navy-900/10" />
+      <Image src={heroImage.src} alt="" fill priority sizes="100vw" className="object-cover object-[70%_68%]" />
+      <div className="absolute inset-0 bg-navy-950/75 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy-950/95 lg:via-navy-900/85 lg:to-navy-900/10" />
     </div>
   );
 }

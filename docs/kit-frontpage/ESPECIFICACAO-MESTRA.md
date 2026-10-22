@@ -7,8 +7,21 @@
 > foi restaurado a partir de `07-implementacao/COMPOSICAO.md`. Este documento é o
 > ponto de entrada do kit e prevalece sobre os demais arquivos em caso de conflito.
 
-Versão: 2.0 — revisão do pacote de implementação.
-Data editorial: 21 de outubro de 2026, America/Sao_Paulo.
+Versão: 2.1 — v2.0 + menu de âncoras e fotografia do hero (ver nota abaixo).
+Data editorial: 21 de outubro de 2026, America/Sao_Paulo; emenda v2.1 em 22 de outubro de 2026.
+
+> **Emenda v2.1 (decisão dos sócios, 22/10/2026).**
+> 1. **Menu de âncoras internas permitido no cabeçalho**: Soluções (`#solucoes`), Produtos
+>    (`#produtos`) e Sobre (`#fundadores`), na ordem da arte, sem "Seja parceiro". Os links só
+>    rolam a página até a seção; nenhum sai da página. Rótulos em `brand.nav` do JSON.
+>    Cabeçalho fixo no topo (sticky), com `scroll-margin-top` nas seções; no celular, os links
+>    ficam numa segunda linha, sem menu hambúrguer. Logo continua sem link.
+>    Destaque da seção ativa no menu: adiado.
+> 2. **Fotografia do hero recebida** (`01-referencias/img-base.jpeg`, 1170×1241, com faixa
+>    preta de 73 px no rodapé, removida no site). Resolve a pendência A01 no que depende de
+>    insumo; o arquivo é menor que o ideal para telas largas.
+> 3. Continuam proibidos: botões, formulários, `mailto:`, links externos, login, cadastro,
+>    contato, parceiros e navegação no rodapé. Os trechos alterados abaixo estão marcados com "(v2.1)".
 Destino: agente responsável pelo repositório e implementação do site.
 Entrega desta revisão: diagnóstico, decisões, conteúdo e requisitos de implementação. Não constitui alteração ou publicação do site.
 
@@ -122,7 +135,7 @@ Nesta fase, o objetivo é presença institucional e compreensão da proposta. N�
 - Novos bancos, buckets, tabelas, políticas RLS, middleware de autorização ou contas.
 - Mudanças de DNS, Cloudflare, Supabase, Vercel, domínio, GitHub ou faturamento.
 - Formulário, chat, newsletter, e-mail acionável, contato ou captação de leads.
-- Menus, navegação por âncoras, aba Parceiros ou página de parceiros nesta fase.
+- Aba Parceiros ou página de parceiros nesta fase. (v2.1: o menu de âncoras internas do cabeçalho passou a ser permitido; outros menus continuam fora.)
 - Animações obrigatórias, áudio, vídeo, autoplay, parallax ou carrosséis.
 
 Pedidos antigos de login, cadastro, parceiros e produto funcional estão suspensos para esta primeira página. A capacidade futura pode aparecer na descrição do produto, sempre acompanhada do status de desenvolvimento.
@@ -131,7 +144,7 @@ Pedidos antigos de login, cadastro, parceiros e produto funcional estão suspens
 
 Não renderizar controles de produto ou navegação. Retirar também ícones de ação, cursor pointer, handlers, focos e efeitos de hover que sugiram clique. Elementos button, form, input, select, textarea, role=button e áreas contenteditable não fazem parte da home.
 
-Única exceção prevista: link acessível “Pular para o conteúdo”, visível ao receber foco e direcionado ao `<main>`. Não criar menu móvel vazio. Não deixar botões desabilitados ou apenas transparentes.
+Exceções previstas: link acessível “Pular para o conteúdo”, visível ao receber foco e direcionado ao `<main>`; e (v2.1) os links do menu de âncoras do cabeçalho, apontando apenas para IDs de seções existentes, com foco visível e hover discreto. Não criar menu móvel vazio. Não deixar botões desabilitados ou apenas transparentes.
 
 ## 5. Consistência dos arquivos e precedência
 
@@ -296,10 +309,11 @@ Objetivo: identificação imediata da empresa, com aparência institucional.
 - Mostrar assinatura apenas se continuar legível; não redimensionar a marca para forçar microtexto ilegível.
 - Não adicionar slogan novo, informações societárias, endereço ou selos.
 - Não tornar o logo um link nesta versão estritamente estática.
-- Não usar header sticky por padrão; o header da arte não exige esse comportamento.
-- Retirar menu, separador vertical e CTAs. Não centralizar artificialmente a marca para preencher o espaço eliminado.
+- (v2.1) Header fixo no topo (sticky), para o menu de âncoras continuar acessível durante a rolagem; as seções compensam a altura com `scroll-margin-top`.
+- (v2.1) Menu de âncoras à direita: Soluções, Produtos e Sobre. Abaixo de 480 px, os links vão para uma segunda linha sob a marca, sem hambúrguer.
+- Retirar o separador vertical, "Seja parceiro" e os CTAs ("Acessar plataforma", "Fale conosco").
 
-Aceite: marca com proporção correta; sem itens à direita, menu hamburger, foco ou navegação residual; mesmo alinhamento lateral das seções.
+Aceite: marca com proporção correta; à direita só os três links de âncora (v2.1); sem menu hamburger, CTAs ou links externos; mesmo alinhamento lateral das seções.
 
 ## 10. Hero
 
@@ -479,7 +493,8 @@ Copyright do conteúdo entregue: “© 2026 ScyQuantix.” Em futuras atualizaç
 
 | Local na arte | Elemento antigo | Tratamento nesta fase |
 |---|---|---|
-| Header | Soluções, Produtos, Seja parceiro/Parceiros, Sobre | Não renderizar navegação |
+| Header | Soluções, Produtos, Sobre | (v2.1) Manter como âncoras internas (`#solucoes`, `#produtos`, `#fundadores`) |
+| Header | Seja parceiro/Parceiros | Remover |
 | Header | Acessar plataforma, login, cadastrar | Remover |
 | Header | Fale conosco | Remover |
 | Hero | Converse sobre seu desafio | Remover bloco de CTA e seta |
@@ -783,7 +798,7 @@ Etapa 2 — Consistência editorial
 Etapa 3 — Estrutura
 
 - Implementar as nove seções e landmarks.
-- Remover controles e rotas de navegação da home.
+- Remover controles e rotas de navegação da home, exceto o menu de âncoras do cabeçalho (v2.1).
 - Montar grids responsivas e copy completa antes de ajustar detalhes.
 
 Etapa 4 — Fidelidade visual
@@ -808,7 +823,7 @@ Não suspender todas as tarefas pela ausência do hero: concluir as partes indep
 |---|---|---|---|
 | T01 | Integridade de copy | Comparação ao JSON/textos integrais | Sem perdas, trocas ou promessas novas |
 | T02 | Estrutura | Inspeção DOM | Nove blocos, um h1 e headings coerentes |
-| T03 | Ações removidas | DOM + teclado + inspeção visual | Nenhum CTA, campo, handler ou foco residual |
+| T03 | Ações removidas | DOM + teclado + inspeção visual | Nenhum CTA, campo, handler ou foco residual; únicos links: skip link e âncoras do menu para seções existentes (v2.1) |
 | T04 | Skip link | Navegação por Tab | Aparece ao foco e alcança o main |
 | T05 | Marca | Comparação com prancha | Geometria, nome, cores e proporção preservados |
 | T06 | Hero | Comparação com arte | Cena correta, texto legível, sem texto duplicado no raster |

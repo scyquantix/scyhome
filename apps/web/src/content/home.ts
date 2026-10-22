@@ -7,7 +7,7 @@ import data from "./home.pt-BR.json";
 export type SolutionIcon = "database" | "cog" | "chart-column-increasing" | "boxes";
 
 export type HomeContent = {
-  brand: { name: string; tagline: string; domain: string };
+  brand: { name: string; tagline: string; domain: string; nav: { label: string; target: string }[] };
   hero: { eyebrow: string; title: [string, string]; description: string; signature: string };
   solutions: {
     eyebrow: string;

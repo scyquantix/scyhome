@@ -9,6 +9,7 @@ export const siteConfig = {
 
 /**
  * Foto limpa do escritório ao pôr do sol (hero), servida de `public/`. Decorativa (alt vazio).
- * Enquanto for `null`, o hero fica no estado provisório em navy — fidelidade visual pendente.
+ * Origem: `01-referencias/img-base.jpeg` do kit, sem a faixa preta do rodapé.
+ * Com `null`, o hero volta ao estado provisório em navy.
  */
-export const heroImage: { src: string } | null = null;
+export const heroImage: { src: string } | null = { src: "/hero-escritorio.jpg" };

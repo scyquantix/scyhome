@@ -2,7 +2,21 @@
   "brand": {
     "name": "ScyQuantix",
     "tagline": "Tecnologia orientada por evidências.",
-    "domain": "scyquantix.com"
+    "domain": "scyquantix.com",
+    "nav": [
+      {
+        "label": "Soluções",
+        "target": "solucoes"
+      },
+      {
+        "label": "Produtos",
+        "target": "produtos"
+      },
+      {
+        "label": "Sobre",
+        "target": "fundadores"
+      }
+    ]
   },
   "hero": {
     "eyebrow": "Tecnologia orientada por evidências",

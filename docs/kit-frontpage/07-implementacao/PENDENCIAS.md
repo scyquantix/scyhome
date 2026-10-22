@@ -5,7 +5,7 @@
 | Arte final completa | Incluída | Referência de layout; contém CTAs antigos a remover |
 | Prancha oficial e campanha | Incluídas | Referência de marca e fotografia |
 | Símbolo e wordmark vetoriais | Recuperados do site atual | Comparar à prancha antes de aprovação |
-| Hero limpo em alta resolução | Não fornecido separadamente | Buscar arquivo original no repositório; solicitar master caso ausente |
+| Hero limpo | Recebido em 22/10/2026 (`01-referencias/img-base.jpeg`, 1170 px de largura) | Usado no site sem a faixa preta do rodapé; uma versão com ~2400 px melhoraria telas largas |
 | Previews dos três produtos | Achatados na arte | Reconstruir estáticos; componentes de apoio incluídos |
 | Ícones | Recuperados do site atual | Preferir dependência existente e preservar licença |
 | Fonte oficial | Não identificada | Conferir fonte do projeto; fallback indicado sem status oficial |

@@ -12,6 +12,11 @@
       "sha256": "cf571969049b21f032bb72039d4c173d6cbd259cb77d39a869aa64e60991291a"
     },
     {
+      "arquivo": "01-referencias/img-base.jpeg",
+      "bytes": 107695,
+      "sha256": "5fcdf77621dcb1426daf7b94e4cd4e03cd303b435eb2023460947fc591bf49cf"
+    },
+    {
       "arquivo": "01-referencias/prancha-da-marca.jpeg",
       "bytes": 349318,
       "sha256": "c82e0b39d5bb48ff4c2db43e8537c3761f56aab9ba8e621fc6984de573d6081e"
@@ -38,18 +43,18 @@
     },
     {
       "arquivo": "03-textos/conteudo.pt-BR.json",
-      "bytes": 5557,
-      "sha256": "d2b4769fb7551ca17673756d06dd00e0a92f278dc4abd2c87cc46a54c5b1822b"
+      "bytes": 5802,
+      "sha256": "28134061aad3afadbe0576a117902b06a164f8b66c5973fccf3c9407d2a3bdde"
     },
     {
       "arquivo": "03-textos/textos-por-secao.md",
-      "bytes": 5510,
-      "sha256": "6b0e8460d162c92fad8b05c2aea3acc882f717ce2900e62b91737ab0af41fe6e"
+      "bytes": 5727,
+      "sha256": "a70b2a72e79f307847b1160c25dd5c50c470a1120b626675a77b7812fea1500f"
     },
     {
       "arquivo": "04-secoes/01-header.md",
-      "bytes": 798,
-      "sha256": "88cba97836f2c4fd7de859a94a147837996d245ce5f2ca8d7277d4ffd41af8a4"
+      "bytes": 1111,
+      "sha256": "4cabf9f9c9f7b7ea0e04b333fa72f119c84f7b35b783abb8d78f47dee04f6849"
     },
     {
       "arquivo": "04-secoes/02-hero.md",
@@ -158,8 +163,8 @@
     },
     {
       "arquivo": "07-implementacao/PENDENCIAS.md",
-      "bytes": 1313,
-      "sha256": "e2e32804a1f6b46192ec24fb0ef77f768fb3820b9d9599ec166934a29a78a6d8"
+      "bytes": 1362,
+      "sha256": "80b87094795c789f994761fec0667abc5373c18fb4784929e33c52ead1da7df2"
     },
     {
       "arquivo": "08-validacao/CHECKLIST.md",
@@ -168,8 +173,8 @@
     },
     {
       "arquivo": "ESPECIFICACAO-MESTRA.md",
-      "bytes": 58445,
-      "sha256": "55558060f2ec18f035888daad14b7836a3904de046bb4550d22985893c43270c"
+      "bytes": 60150,
+      "sha256": "650feb8f683e24dd7c938802a58d22bc8a52376dff5704f771461f08eb5aea5f"
     },
     {
       "arquivo": "README.md",
@@ -178,8 +183,8 @@
     },
     {
       "arquivo": "catalogo.html",
-      "bytes": 8759,
-      "sha256": "b259eb9a25d46d9561a6bf6d100a8aee54ab603ba7a6bba3b11625f6eb86964c"
+      "bytes": 9106,
+      "sha256": "e4b94ad3e0de77dcf483ab85476672eb75235bb959f2344c05c8a9e7a186ef97"
     },
     {
       "arquivo": "gerar-derivados.py",
